@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMobileSample.PageUser">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="friendStack">
+                <Label Text="Name"/>
+                <Entry Text="{Binding Name}" FontSize="Medium"/>
+                <Label Text="Login"/>
+                <Entry Text="{Binding Login}" FontSize="Medium"/>
+                <Label Text="Number"/>
+                <Entry Text="{Binding Number}" FontSize="Medium"/>
+                <Label Text="LastName"/>
+                <Entry Text="{Binding LastName}" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="Добавить" Command="{Binding ListViewModel.SaveCommand}" CommandParameter="{Binding}" />
+                <Button Text="Удалить" Command="{Binding ListViewModel.DeleteCommand}" CommandParameter="{Binding}" />
+                <Button Text="Назад" Command="{Binding Path=ListViewModel.BackCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
